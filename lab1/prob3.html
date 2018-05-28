@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const item = {
+        "name":"Bisciuts",
+        "type":"regular",
+        "category":"food",
+        "price":2.0
+    }
+
+    var applyCoupon = cat => dis => item => {
+        if ( item.category == cat){
+            item.price = item.price - item.price*dis;
+        }
+        return item;
+    }
+
+    console.log(applyCoupon("food")(0.1)(item).price ===1.8);
+</script>
+</body>
+</html>
