@@ -1,5 +1,5 @@
 1. Why do we want sometimes to use setImmediate instead of using setTimeout ?
-Because if you want to get anything from hard disk, setImmediate will first work than setTimeout.
+Because if you want to get anything after IO events callbacks, setImmediate will first work than setTimeout.
 
 2. Difference between process.nextTick and setImmediate ?
 setImmediate will schedule a callback to run at check phase of the event loop after IO events callbacks.
