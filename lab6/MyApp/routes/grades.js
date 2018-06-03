@@ -54,7 +54,7 @@ router.put('/:id', function(req, res, next) {
     }
   } 
 }); 
-{}
+
 /* DELETE single grade. */
 router.delete('/:id', function(req, res, next) {
   for(let grade in grades){
