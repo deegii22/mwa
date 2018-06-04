@@ -15,6 +15,7 @@ app.get('/secret', function(req, res){
 
             const encrypted = doc.message;
             let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+            decrypted += decipher.final('utf8');
 
             res.send(decrypted);
             client.close();
