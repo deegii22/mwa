@@ -1,17 +1,12 @@
 {
-    "_id":"1",
-    "books":[
+    "isbn":"12346",
+    "author":"Asaad",
+    "keyword":["js","node","mongo"],
+    "borrower": [
         {
-            "isbn":"12346",
-            "author":"Asaad",
-            "keyword":["js","node","mongo"],
-            "borrower": [
-                {
-                    "student_name":"Deegii",
-                    "return_date":"6-4-2018",
-                    "contact":"asaad@mum.edu"
-                }
-            ]
+            "student_name":"Deegii",
+            "return_date":"6-4-2018",
+            "contact":"deegii@mum.edu"
         }
     ]
 }
