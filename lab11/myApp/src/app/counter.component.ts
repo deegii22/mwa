@@ -13,20 +13,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styles: []
 })
 export class CounterComponent implements OnInit {
-  @Input() counterValue;
+  @Input() counter;
+  counterValue: number;
   @Output() counterChange: EventEmitter<number> ;
   constructor() { 
     this.counterChange = new EventEmitter();
   }
   decrease(){
-    this.counterValue = parseInt(this.counterValue) - 1;
+    this.counterValue--;
     this.counterChange.emit(this.counterValue);
   }
   increase(){
-    this.counterValue = parseInt(this.counterValue) + 1;
+    this.counterValue++;
     this.counterChange.emit(this.counterValue);
   }
   ngOnInit() {
+    this.counterValue = parseInt(this.counter);
   }
 
 }
