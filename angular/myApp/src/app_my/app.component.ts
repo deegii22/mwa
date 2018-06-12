@@ -4,9 +4,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-root',
   template: `
     <!--<h1>Welcome to myApp {{ title }}</h1>
-    <p>Aaaaaa</p>-->
+    <p>Aaaaaa</p>
     {{ title}}
     <app-monday [myname]="title">Saruul</app-monday><app-tuesday (onGraduation)="handleMe($event)"></app-tuesday>
+    -->
+    <input #myinput value="{{title}}" (input)=0 />{{myinput.value}}
     `,
   styles: ['h1{ color: red}']
 })

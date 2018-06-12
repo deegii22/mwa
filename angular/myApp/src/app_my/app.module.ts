@@ -1,22 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ChildComponent } from './child/child.component';
-import { UpperDirective } from './upper.directive';
+import { MondayComponent } from './monday.component';
+import { TuesdayComponent } from './tuesday.component';
+import { DdddDirective } from './dddd.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    UpperDirective
+    MondayComponent,
+    TuesdayComponent,
+    DdddDirective
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
