@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// use FormsModule Only when using Template Driven Forms
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+// use ReactiveFormsModule Only when using Template Driven Forms
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ChildComponent } from './child/child.component';
-import { UpperDirective } from './upper.directive';
+import { TemplateDrivenComponent } from "./template-driven/template-driven.component";
+import { DataDrivenComponent } from "./data-driven/data-driven.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChildComponent,
-    UpperDirective
+    AppComponent, 
+    TemplateDrivenComponent,
+    DataDrivenComponent
   ],
+  // to use Forms we must have FormsModule OR ReactiveFormsModule Here
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
