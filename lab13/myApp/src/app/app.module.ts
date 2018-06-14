@@ -17,6 +17,7 @@ import { routes } from './farmers-market/farmers-market-routing.module';
     FarmersMarketModule,
     RouterModule.forRoot([
       { path: 'farmersMarket', component: FarmersComponent },
+      { path: 'lazy', loadChildren: './farmers-market/farmers-market.module#FarmersMarketModule'},
       { path: 'farmersMarket/farm', children: routes },
       { path: 'farmersMarket/notfound', children: routes }
      ])

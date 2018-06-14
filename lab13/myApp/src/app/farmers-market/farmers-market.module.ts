@@ -14,6 +14,7 @@ import { MyGuard } from './my-guard.service';
     FarmersMarketRoutingModule
   ],
   declarations: [FarmersComponent, FarmDetailsComponent, NotfoundComponent],
-  providers: [DbService, MyGuard]
+  providers: [DbService, MyGuard],
+  bootstrap: [FarmersComponent]
 })
 export class FarmersMarketModule { FarmersComponent }

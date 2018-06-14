@@ -1,26 +1,22 @@
-import { CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot, Router, ActivatedRoute } from '@angular/router';
+import { CanActivate, Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DbService } from './db.service';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class MyGuard implements CanActivate{
-  private id: number;
-  private activatedRoute: ActivatedRoute;
-  private dbService: DbService
-  private router: Router
   
-
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
-  Observable<boolean> | boolean{
-    this.activatedRoute.params.subscribe(params => {this.id = params['id'];})
-
+  constructor(private router: Router, private dbService: DbService){}
+  canActivate(route: ActivatedRouteSnapshot){
+    var id = parseInt(route.params.id);
     const farms = this.dbService.getData();
-    for(let f of farms){
-      if(this.id != f._id){
-        this.router.navigate(['notfound']);
-        return true;
-      }
+    const ids: number[] = farms.map(f => f._id);
+    
+    if(ids.indexOf(id) > -1){
+      return true;
     }
-    return false
+    this.router.navigateByUrl('/farmersMarket/notfound');
+    return false;
   }
 
   
